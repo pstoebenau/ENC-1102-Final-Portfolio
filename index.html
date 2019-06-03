@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Final Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
   </head>
@@ -14,7 +15,7 @@
           <h3>Patrick Stoebenau</h2>
         </div>
 
-        <div id="scroll-icon">
+        <div class="scroll-icon">
           <button type="button" name="scroll" onclick="location.href='#cover-letter'">
             <img src="../images/Down_Arrow.gif" alt="Scroll Down Icon" height="30px">
           </button>
@@ -28,6 +29,12 @@
           <h1>Cover Letter</h1>
 
         </div>
+
+        <div class="scroll-icon">
+          <button type="button" name="scroll" onclick="location.href='#research-proposal'">
+            <img src="../images/Down_Arrow.gif" alt="Scroll Down Icon" height="30px">
+          </button>
+        </div>
       </section>
 
       <section id="research-proposal">
@@ -35,16 +42,57 @@
 
         <div class="essay-container">
           <div class="essay-container-text">
-            <p><span>The process I took to choose my literate activity to research involved considering my hobbies and how they involved multiple literacies. My first thought was my passion for coding, though this proved to be too general and I narrowed it down to web development. I had experience in this area and I was convinced that I could further the field through my research. The research I decided to conduct was how multiple literacies could be used to improve website development. My current studies into multiliteracies opened my eyes to new possibilities when it comes to designing a website.</span></p>
-            <p><span>My line of research comes with multiple terms and concepts that must be explained. An example of this is the use of multiliteracies, which can be confusing to someone that is not accustomed to writing studies. The way I circumvented this was by linking an article that explained the subject matter well and also included my own explanation of the term in my research proposal. I expected my audience to be interested in website development and also somewhat familiar with basic writing concepts. Because of this I chose to explain most of the abstract terms in an effort to make my research proposal more readable.</span></p>
-            <p><span>Through the iterative process of drafting, I got feedback on how to improve my research proposal. From peer review, I got advice to add a conclusion and fix some minor grammatical errors. This helped me in closing the research proposal and also allowed me to improve the quality of my writing. After revising my research proposal from peer review, Professor Vazquez advised me to fix my &ldquo;Method&rdquo; heading to the more appropriate &ldquo;Research Proposal&rdquo; heading. She also brought up the errors in my work cited page. Surprisingly, all feedback I received instructed to perform local revisions. I also did not see any need to perform global changes to my research proposal.</span></p>
-            <p><span>Overall, this research proposal was easy to write about because it involved my passion for coding. My participation in website development gives me the ability to spread first hand experience on it. The most difficult challenge was finding the right research question that would not only incorporate what I love about website development but also incorporate the concept of multiliteracies. I feel that I was able to successfully merge the two into a useful and engaging research question. Through these difficulties I learned how connected different areas of thought can be. I learned to organize my writing better with headings and paragraph breaks that make sense. I also acquired the ability to cater to my audience and their knowledge. This is especially useful in widening the barrier to entry for this type of discussion. In the end, this research proposal was a process that I learned from and hopefully others can learn from as well.</span></p>
+            <div style="padding: 0 66px">
+              <p><span>The process I took to choose my literate activity to research involved considering my hobbies and how they involved multiple literacies. My first thought was my passion for coding, though this proved to be too general and I narrowed it down to web development. I had experience in this area and I was convinced that I could further the field through my research. The research I decided to conduct was how multiple literacies could be used to improve website development. My current studies into multiliteracies opened my eyes to new possibilities when it comes to designing a website.</span></p>
+              <p><span>My line of research comes with multiple terms and concepts that must be explained. An example of this is the use of multiliteracies, which can be confusing to someone that is not accustomed to writing studies. The way I circumvented this was by linking an article that explained the subject matter well and also included my own explanation of the term in my research proposal. I expected my audience to be interested in website development and also somewhat familiar with basic writing concepts. Because of this I chose to explain most of the abstract terms in an effort to make my research proposal more readable.</span></p>
+              <p><span>Through the iterative process of drafting, I got feedback on how to improve my research proposal. From peer review, I got advice to add a conclusion and fix some minor grammatical errors. This helped me in closing the research proposal and also allowed me to improve the quality of my writing. After revising my research proposal from peer review, Professor Vazquez advised me to fix my &ldquo;Method&rdquo; heading to the more appropriate &ldquo;Research Proposal&rdquo; heading. She also brought up the errors in my work cited page. Surprisingly, all feedback I received instructed to perform local revisions. I also did not see any need to perform global changes to my research proposal.</span></p>
+              <p><span>Overall, this research proposal was easy to write about because it involved my passion for coding. My participation in website development gives me the ability to spread first hand experience on it. The most difficult challenge was finding the right research question that would not only incorporate what I love about website development but also incorporate the concept of multiliteracies. I feel that I was able to successfully merge the two into a useful and engaging research question. Through these difficulties I learned how connected different areas of thought can be. I learned to organize my writing better with headings and paragraph breaks that make sense. I also acquired the ability to cater to my audience and their knowledge. This is especially useful in widening the barrier to entry for this type of discussion. In the end, this research proposal was a process that I learned from and hopefully others can learn from as well.</span></p>
+            </div>
           </div>
+        </div>
+
+        <div class="file-section">
+          <button type="button" id="Task_I_Rough_Draft" onclick="window.open('../files/task1/Task_I_Rough_Draft.pdf')">
+            <div class="file-preview">
+              <div class="file-preview-img">
+                <img src="../images/Task_I_Rough_Draft.png" alt="Task_I_Rough_Draft"/>
+              </div>
+              <div class="file-preview-desc">
+                <img src="../images/file.png" alt="Task_I_Rough_Draft">
+                <h4>Task I Rough Draft</h3>
+              </div>
+            </div>
+          </button>
+
+          <button type="button" id="Task_I_Revised_Draft" onclick="window.open('../files/task1/Task_I_Revised_Draft.pdf')">
+            <div class="file-preview">
+              <div class="file-preview-img">
+                <img src="../images/Task_I_Revised_Draft.png" alt="Task_I_Revised_Draft"/>
+              </div>
+              <div class="file-preview-desc">
+                <img src="../images/file.png" alt="Task_I_Revised_Draft">
+                <h4>Task I Revised Draft</h3>
+              </div>
+            </div>
+          </button>
+
+          <button type="button" id="Task_I_Portfolio_Draft" onclick="window.open('../files/task1/Task_I_Portfolio_Draft.pdf')">
+            <div class="file-preview">
+              <div class="file-preview-img">
+                <img src="../images/Task_I_Portfolio_Draft.png" alt="Task_I_Portfolio_Draft"/>
+              </div>
+              <div class="file-preview-desc">
+                <img src="../images/file.png" alt="Task_I_Portfolio_Draft">
+                <h4>Task I Portfolio Draft</h3>
+              </div>
+            </div>
+          </button>
         </div>
 
       </section>
     </div>
 
+    <script type="text/javascript" src="../js/main.js"></script>
     <script type="text/javascript" src="../js/background-art.js"></script>
   </body>
 </html>
