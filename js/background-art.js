@@ -56,6 +56,12 @@ function update() {
   }
 }
 
+class Vertex {
+  position;
+  size;
+  
+}
+
 class Star {
   position;
   size;
