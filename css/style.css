@@ -161,9 +161,15 @@ button:active {
 
 #cover-letter {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+}
+#cover-letter h1 {
+  margin-top: 50px;
+}
+#cover-letter .essay-container {
+  flex: 1;
 }
 
 .task {

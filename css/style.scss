@@ -173,9 +173,17 @@ button:active {
 
 #cover-letter {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  .essay-container {
+    flex: 1;
+  }
 }
 
 .task {
