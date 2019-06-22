@@ -3,9 +3,9 @@ const ctx = canvas.getContext("2d");
 
 window.addEventListener("resize", resizeCanvas);
 
-let stars = [];
+let vertices = [];
 
-const fps = 60;
+const fps = 30;
 const frameRate = 1000/fps;
 let past = Date.now();
 let elapsed = 0;
@@ -13,6 +13,9 @@ let elapsed = 0;
 function initialize() {
   resizeCanvas();
   setFrameRate();
+  for (let i = 0; i < 150; i++) {
+    vertices.push(new Vertex(3));
+  }
 }
 
 function resizeCanvas() {
@@ -37,29 +40,92 @@ function setFrameRate() {
 
     if(typeof update === "function")
       update();
+    else
+      console.error("Please define an update function");
   }
 }
 
 function update() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  let randNum = Math.random();
-
-  if(randNum < .2)
-    stars.push(new Star());
-
-  for (let i = stars.length-1; i >= 0; i--) {
-    stars[i].update();
-
-    if(!stars[i].isAlive)
-      stars.splice(i, 1);
+  for (let i = 0; i < vertices.length; i++) {
+    vertices[i].update(vertices);
   }
 }
 
 class Vertex {
   position;
+  velocity;
   size;
-  
+  neighbors = [];
+
+  constructor(size)
+  {
+    this.position = {
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height,
+    };
+    this.velocity = {
+      x: Math.random()*3-1.5,
+      y: Math.random()*3-1.5,
+    };
+    this.size = size;
+  }
+
+  updateNeighbors(vertices)
+  {
+    for (let i = 0; i < vertices.length; i++) {
+      if(this.distance(vertices[i]) < 100)
+        this.neighbors[i] = vertices[i];
+      else
+        this.neighbors[i] = null;
+    }
+  }
+
+  distance(vertex){
+    let sum = Math.pow(this.position.x-vertex.position.x, 2);
+    sum += Math.pow(this.position.y-vertex.position.y, 2);;
+    return Math.sqrt(sum);
+  }
+
+  draw()
+  {
+    ctx.beginPath();
+    ctx.arc(this.position.x, this.position.y, this.size, 0, 2*Math.PI);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+
+    for (var i = 0; i < this.neighbors.length; i++) {
+      if(!this.neighbors[i])
+        continue;
+
+      let a = this.position;
+      let b = this.neighbors[i].position;
+
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = "#fff";
+      ctx.stroke();
+      ctx.closePath();
+    }
+  }
+
+  update(vertices)
+  {
+    this.updateNeighbors(vertices);
+    this.draw();
+
+    this.position.x += this.velocity.x;
+    this.position.y += this.velocity.y;
+
+    if(this.position.x < 0 || this.position.x > canvas.width)
+      this.velocity.x *= -1;
+
+    if(this.position.y < 0 || this.position.y > canvas.height)
+      this.velocity.y *= -1;
+  }
 }
 
 class Star {
